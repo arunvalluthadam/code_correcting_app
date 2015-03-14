@@ -41,7 +41,7 @@ def one_question(request, question_id=1):
 	
 	variables = RequestContext(request, {
 		'one_questions': questions,
-		# 'form': form,
+		'form': form,
 	})
 	return render_to_response('one-question.html', variables)
 
