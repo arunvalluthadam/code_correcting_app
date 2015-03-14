@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<br><br>
+	<div class="row">
+		<div class="col-sm-offset-1 col-sm-10 img img-rounded" style="border:1px solid;"> 
+			<br>
+			<h3>Questions</h3>
+			<br>
+			{% for question in questions %}
+				<ul>
+				{#<!-- <li><a href="{% url one_question %}"><p style="font-size:15px;">{{question.questions}}</p></a></li> -->#}
+				<li><a href="/one-question/{{question.id}}"><p style="font-size:15px;">{{question.questions}}</p></a></li>
+				<!-- <ul>
+					<li>{{question.test_function}}</li>
+					<li>{{question.expected_ans}}</li>
+				</ul> -->
+				</ul>
+			{% endfor %}
+
+			<!-- <a href="#"><p style="font-size:15px;">We added reviews to all the products, as you can see in the js file. Inside our Reviews tab display ALL the reviews for a product. Make sure you show the reviews body,author, and stars.</p></a>
+
+			<a href="#"><p style="font-size:15px;">We added reviews to all the products, as you can see in the js file. Inside our Reviews tab display ALL the reviews for a product. Make sure you show the reviews body,author, and stars.</p></a>
+
+			<a href="#"><p style="font-size:15px;">We added reviews to all the products, as you can see in the js file. Inside our Reviews tab display ALL the reviews for a product. Make sure you show the reviews body,author, and stars.</p></a>
+
+			<a href="#"><p style="font-size:15px;">We added reviews to all the products, as you can see in the js file. Inside our Reviews tab display ALL the reviews for a product. Make sure you show the reviews body,author, and stars.</p></a> -->
+			<br>
+			<br>
+		</div>
+	</div>
+{% endblock %}

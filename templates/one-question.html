@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<br><br><a class="btn btn-info" href="/">Home</a>
+	<div class="row">
+		<div class="col-sm-offset-1 col-sm-10">  <!-- style="border:solid" -->
+			<br>
+			<h4>Question No. {{one_questions.id}}</h4>
+			<br>
+			<p style="font-size:15px;">{{one_questions.questions}}</p>
+			<br>
+			<br>
+		</div>
+
+		<div class="col-sm-4">  <!-- style="border:solid" -->
+			<br>
+			<br>
+				<div class="row">
+					<div class="col-sm-offset-0 col-sm-12 img img-rounded" style="border:1px solid #FFCCE5;">
+						<br>
+							<h4><b>Objectives</b></h4>
+							<hr>
+							<p>Use <b>{{one_questions.function_name}}</b> as function name</p>
+							<!-- <ul>
+								<li>condition 1</li>
+								<li>condition 2</li>
+								<li>condition 3</li>
+							</ul> -->
+						<br>
+						<br>
+					</div>
+				</div>
+			<br>
+			<br>
+		</div>
+
+		<div class="col-sm-8">  <!-- style="border:solid" -->
+			<br>
+			<br>
+			<form action="/answer-valid/" method="post">{% csrf_token %}
+				{#<!-- {{form.your_code}} -->#}
+				<textarea class="form-control" rows="20" name="quest" placeholder="Start from Here">def {{one_questions.function_name}}</textarea>
+				<br>
+				<div class="row">
+					<div class="col-sm-offset-5 col-sm-5">
+						<input class="btn btn-primary" type="submit" value="Submit">
+					</div>
+				</div>
+			</form>
+			<br>
+			<br>
+		</div>
+		
+	</div>
+{% endblock %}
