@@ -17,23 +17,23 @@ def get_current(question_id=1):
 
 @app.task
 class TestCode(unittest.TestCase):
-	def setUp(self):
-        """
-        This method is called before each test
-        """
-        self.false_int = "A"
+	# def setUp(self):
+ #        """
+ #        This method is called before each test
+ #        """
+ #        self.false_int = "A"
 
-    def tearDown(self):
-        """
-        function with a last process
-        """
-        pass
+ #    def tearDown(self):
+ #        """
+ #        function with a last process
+ #        """
+ #        pass
 
 	def testCode(self):
 		self.assertEqual(code_for_test.test_func, expect_ans)
 
-	def testBadInput(self):
-		self.assertRaises(code_for_test.TypeError, expect_ans)
+	# def testBadInput(self):
+	# 	self.assertRaises(code_for_test.TypeError, expect_ans)
 
 
 if __name__ == "__main__":
